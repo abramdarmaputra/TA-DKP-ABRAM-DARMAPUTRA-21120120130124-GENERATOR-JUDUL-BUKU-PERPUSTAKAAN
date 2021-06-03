@@ -24,13 +24,12 @@ public class GUILayout {
         changeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // ntar diubah ke jTextField1.getText() aja
                 String words = textField.getText();
 
-                // mulai proses format kata
+                // proses format kata
                 String formattedWords = formatWords(words);
 
-                // tampilkan output, diubah sesuai kebutuhan mu
+                // tampilkan output, diubah sesuai kebutuhan
                 // utk cetak outputnya (bisa pake textbox, dsb.)
                 textArea.setText(formattedWords);
             }
