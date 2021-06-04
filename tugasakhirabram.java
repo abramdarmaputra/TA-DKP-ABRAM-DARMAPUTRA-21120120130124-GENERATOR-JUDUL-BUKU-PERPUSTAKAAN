@@ -8,9 +8,6 @@ public class GUILayout {
     private JTextArea textArea;
     private JTextField textField;
     private JPanel myPanel;
-    private static final String[] conjunctions = {
-            "di", "ke", "dari", "dan"
-    };
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Generator Judul Buku Perpustakaan");
@@ -48,10 +45,13 @@ public class GUILayout {
         // inisialisasi variabel string baru
         String formattedWords = "";
 
+        // Pembuatan objek berdasarkan class konjungsi
+        konjungsi conjunct = new konjungsi();
+
         // lakukan perulangan pada setiap kata dalam kalimat
         // (split berdasarkan whitespace / spasi)
         for (String word : words.split(" ")) {
-            if (isConjunction(word)) {
+            if (conjunct.isConjunction(word)) {
                 // jika kata bersifat konjungsi, ubah ke lower case,
                 // lalu tambahkan ke variabel formattedWords
                 formattedWords += word.toLowerCase();
@@ -65,14 +65,5 @@ public class GUILayout {
         }
         return formattedWords;
     }
-
-    private static boolean isConjunction(final String word) {
-        for (String conjunction : conjunctions) if (conjunction.equals(word)) return true;
-        return false;
-    }
 }
-
-
-
-
 
